@@ -4,6 +4,7 @@ import org.hexworks.zircon.api.ColorThemes
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.graphics.BoxType
+import org.hexworks.zircon.api.kotlin.onMouseReleased
 import org.hexworks.zircon.api.mvc.base.BaseView
 
 class PlayView : BaseView() {
@@ -29,6 +30,16 @@ class PlayView : BaseView() {
                 .wrapWithShadow()
                 .wrapWithBox()
                 .build()
+
+        loseButton.onMouseReleased {
+            replaceWith(LoseView())
+            close()
+        }
+
+        winButton.onMouseReleased {
+            replaceWith(WinView())
+            close()
+        }
 
         screen.addComponent(loseButton)
         screen.addComponent(winButton)

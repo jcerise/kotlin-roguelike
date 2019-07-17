@@ -1,5 +1,6 @@
 package org.hexworks.cavesofzircon.view
 
+import org.hexworks.cavesofzircon.GameConfig
 import org.hexworks.zircon.api.ColorThemes
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
@@ -13,35 +14,20 @@ class PlayView : BaseView() {
 
     override fun onDock() {
 
-        val loseButton = Components.button()
-                .withAlignmentWithin(screen, ComponentAlignment.LEFT_CENTER)
-                .withText("Lose!")
-                .wrapSides(false)
-                .withBoxType(BoxType.SINGLE)
-                .wrapWithShadow()
+        val sidebar = Components.panel()
+                .withSize(GameConfig.SIDEBAR_WIDTH, GameConfig.WINDOW_HEIGHT)
                 .wrapWithBox()
                 .build()
 
-        val winButton = Components.button()
-                .withAlignmentWithin(screen, ComponentAlignment.RIGHT_CENTER)
-                .withText("Win!")
-                .wrapSides(false)
-                .withBoxType(BoxType.SINGLE)
-                .wrapWithShadow()
+        val log = Components.panel()
+                .withTitle("Log")
                 .wrapWithBox()
+                .withSize(GameConfig.WINDOW_WIDTH - GameConfig.SIDEBAR_WIDTH, GameConfig.LOG_AREA_HEIGHT)
+                .withAlignmentWithin(screen, ComponentAlignment.BOTTOM_RIGHT)
                 .build()
 
-        loseButton.onMouseReleased {
-            replaceWith(LoseView())
-            close()
-        }
+        screen.addComponent(sidebar)
+        screen.addComponent(log)
 
-        winButton.onMouseReleased {
-            replaceWith(WinView())
-            close()
-        }
-
-        screen.addComponent(loseButton)
-        screen.addComponent(winButton)
     }
 }

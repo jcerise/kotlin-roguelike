@@ -9,8 +9,6 @@ import org.hexworks.zircon.api.GameComponents
 import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.data.Tile
 import org.hexworks.zircon.api.game.ProjectionMode
-import org.hexworks.zircon.api.graphics.BoxType
-import org.hexworks.zircon.api.kotlin.onMouseReleased
 import org.hexworks.zircon.api.mvc.base.BaseView
 
 class PlayView(private val game: Game = Game.create()) : BaseView() {

@@ -1,5 +1,8 @@
 package org.hexworks.cavesofzircon
 
+import org.hexworks.cavesofzircon.blocks.GameBlock
+import org.hexworks.cavesofzircon.builders.GameBlockFactory
+import org.hexworks.cavesofzircon.extensions.sameLevelNeighborsShuffled
 import org.hexworks.zircon.api.Positions
 import org.hexworks.zircon.api.data.impl.Position3D
 import org.hexworks.zircon.api.data.impl.Size3D

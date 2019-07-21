@@ -1,4 +1,4 @@
-package org.hexworks.cavesofzircon
+package org.hexworks.cavesofzircon.extensions
 
 import org.hexworks.zircon.api.data.impl.Position3D
 

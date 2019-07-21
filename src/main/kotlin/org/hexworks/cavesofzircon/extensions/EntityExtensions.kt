@@ -1,6 +1,7 @@
-package org.hexworks.cavesofzircon
+package org.hexworks.cavesofzircon.extensions
 
 import org.hexworks.amethyst.api.Attribute
+import org.hexworks.cavesofzircon.AnyGameEntity
 import org.hexworks.cavesofzircon.attributes.EntityPosition
 import org.hexworks.cavesofzircon.attributes.EntityTile
 import org.hexworks.cobalt.datatypes.extensions.map
